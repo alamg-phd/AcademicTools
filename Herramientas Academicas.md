@@ -1,33 +1,53 @@
-## Link de Acceso a los Cursos del Doctorado
-
 [Doctorado en Ciencias e Ingeniería Estadística – Ciclo II](https://alamg-phd.github.io/AcademicTools/doctorado_web/PHD%20-%20Antonio%20Lam%20-%202do%20Ciclo.html)
 
-***
-
-<table style="
+<div style="
   border: 3px solid #007ACC;
   border-radius: 20px;
   background-color: #E6F0FF;
-  padding: 15px;
-  width: 90%;
-  margin: 15px auto;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 90%;
+  box-sizing: border-box;
+  display: block;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow: hidden; /* Oculta cualquier contenido que desborde */
 ">
-<tr><td>
 
-<b style="color:#004080;">📘 Nota académica:</b>  
-Este recuadro está diseñado para funcionar correctamente en GitHub Pages y en cualquier entorno Markdown que soporte HTML básico.  
-Puedes incluir texto de cualquier longitud; el recuadro se ajustará automáticamente al contenido.  
+<b style="color:#004080;">
 
-Por ejemplo, aquí incluimos texto largo de prueba:  
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar lectus nec justo bibendum, a porttitor lorem dictum. Nulla facilisi. Donec a sem nec mi pulvinar tincidunt. Curabitur quis varius tortor. Phasellus sagittis, elit quis consequat dapibus, lorem erat feugiat erat, sed tempor turpis erat et nunc. Integer tempor, ligula non interdum tincidunt, risus nulla tincidunt elit, ut aliquam elit sem vel nunc.  
-Sed ac augue sed lacus gravida egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis nec ultricies neque. In a eros euismod, posuere felis non, mattis felis.
+### Programa de Doctorado en Ciencias e Investigación Estadística  
 
-</td></tr>
+El DCIES está diseñado para docentes universitarios y científicos o profesionales investigadores en ciencia y tecnología. El estudiante de este programa doctoral profundizará su estudio en fundamentos de la teoría estadística, probabilidad o aprendizaje de máquina mediante el desarrollo de investigaciones científicas en diversas áreas del conocimiento de la ingeniería y tecnología.  
 
-***
+### LÍNEAS DE INVESTIGACIÓN  
 
-<p align="center">
-  <img src="https://scontent.flim8-1.fna.fbcdn.net/v/t39.30808-6/480141329_122192564192137407_8090853015393789834_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=pbxCXvBBtosQ7kNvwFxjbu2&_nc_oc=Adm9bJu2ti1EnmcefwXN5I1qX8dbjZgpDXSUPEDqKSpG5HO4i5m9OHVo_puuEmm2f0ULNFreASJATDZfbgV7ck1k&_nc_zt=23&_nc_ht=scontent.flim8-1.fna&_nc_gid=v28oj2ZByApwXgpP_PZAIw&oh=00_AfeTn5EhXF1bZZJAntWDrapQcbi31TfuEQc18vJXHjBsmA&oe=68FAD6F2 **images/recuadro-demo.png" alt="Recuadro académico" width="500"> 
-</p>
+- Metodología estadística
+- Modelos estadísticos espacio temporal
+- Modelos geoespaciales
+- Series de tiempo
+- Análisis latente
+- Aprendizaje de máquina
+- Diseño experimental y muestreo
+- Otras propuestas por el doctorado y su asesor.
 
-***
+### Referencias  
+
+Durrett, R. (2019). Probability: Theory and Examples Cambridge University Press.   
+Resnick, S. I. (2013). A Probability Path. Birkhäuser.   
+Kallenberg, O. (2021). Springer.    
+Shiryaev, A. N. (2016).Probability-1 (3.ª ed.).  
+
+### Afiche DCIES - 2025-I  
+
+</div>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/alamg-phd/AcademicTools/main/afiche_doctorado_20205.jpg" 
+       alt="Afiche Doctorado 2025" 
+       width="500" />
+</div>
+
+<br> 
+<br>
+<b>Antonio Lam</b></p>
