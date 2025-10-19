@@ -1,8 +1,6 @@
-[Doctorado en Ciencias e Ingeniería Estadística – Ciclo II](https://alamg-phd.github.io/AcademicTools/doctorado_web/PHD%20-%20Antonio%20Lam%20-%202do%20Ciclo.html)
+# Doctorado en Ciencias e Investigación Estadística  
 
-<br>
-
-https://alamg-phd.github.io/AcademicTools/PHD%20-%20Antonio%20Lam%20-%202do%20Ciclo.html
+[Doctorado en Ciencias e Ingeniería Estadística – 2do. Ciclo](https://alamg-phd.github.io/AcademicTools/PHD%20-%20Antonio%20Lam%20-%202do%20Ciclo.html)
 
 <br>
 
