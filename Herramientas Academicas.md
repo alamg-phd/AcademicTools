@@ -2,6 +2,55 @@
 
 [Doctorado en Ciencias e Ingeniería Estadística – 2do. Ciclo](https://alamg-phd.github.io/AcademicTools/PHD%20-%20Antonio%20Lam%20-%202do%20Ciclo.html)
 
+***
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Abrir Link en Nueva Pestaña</title>
+</head>
+<body>
+
+    <h1>Ejemplo de Apertura de Enlace</h1>
+
+    <button id="abrir-link-btn">Abrir PDF Antonio Lam</button>
+
+    <script>
+        // La URL que quieres abrir
+        const url_destino = "https://alamg-phd.github.io/AcademicTools/PHD%20-%20Antonio%20Lam%20-%202do%20Ciclo.html";
+
+        /**
+         * Función para abrir la URL en una nueva pestaña/ventana.
+         * window.open(url) abrirá la URL.
+         * Si se llama desde un evento de clic (iniciada por el usuario), 
+         * los navegadores modernos lo suelen abrir en una nueva pestaña.
+         */
+        function abrirLinkEnNuevaPestana(url) {
+            // El primer parámetro es la URL. El segundo (opcional) es el nombre de la ventana.
+            // Al omitir el segundo parámetro, o no usar '_blank', el navegador decide, 
+            // pero si es iniciado por el usuario, casi siempre será una nueva pestaña.
+            window.open(url); 
+            
+            // Opcional: El navegador podría interpretar una cadena vacía ""
+            // o un nombre de ventana único como una solicitud para una nueva pestaña.
+            // window.open(url, "nuevaVentanaUnica");
+        }
+
+        // Obtener el elemento botón
+        const boton = document.getElementById('abrir-link-btn');
+
+        // Asignar el evento 'click' al botón
+        boton.addEventListener('click', () => {
+            abrirLinkEnNuevaPestana(url_destino);
+        });
+    </script>
+
+</body>
+</html>
+
+***
+
 
 <a href="https://alamg-phd.github.io/AcademicTools/PHD%20-%20Antonio%20Lam%20-%202do%20Ciclo.html" target="_blank">
 Doctorado en Ciencias e Ingeniería Estadística – 2do. Ciclo
