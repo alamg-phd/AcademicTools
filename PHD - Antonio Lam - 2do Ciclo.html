@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctorado en Estadística - UNI</title>
+    <!-- Icono de la universidad -->
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/f/f7/Uni-logo_transparente_granate.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #520310;
+            --secondary-color: #ee940d;
+            --accent-color: #e74c3c;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --document-color: #27ae60;
+            --uni-red: #8B0000;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        
+        header {
+            position: relative;
+            padding: 30px 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-color));
+            color: white;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        .uni-logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            opacity: 0.8;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 500;
+        }
+        
+        h2 {
+            margin: 10px 0 0; /* margen superior */
+            font-size: 1.5rem; /* tamaño de fuente */
+            font-family: "Arial", sans-serif; /* tipo de fuente */
+           <!--  font-weight: bold; /* negrita */  -->
+            color: rgb(255, 255, 255); /* color de la fuente */
+        }
+        
+        <!-- h2 {                      -->
+        <!--    margin: 10px 0 0;      -->
+        <!--        font-size: 1.5rem; -->
+        <!--font-weight: 300;          -->
+         <!--}                         -->
+        
+        .uni-main-logo {
+            display: block;
+            margin: 0 auto 30px;
+            width: 750px;
+            height: auto;
+        }
+        
+        .documentos-section {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 25px;
+            background-color: #f0f8f4;
+            border-radius: 8px;
+            border-left: 5px solid var(--document-color);
+        }
+        
+        .documentos-section h3 {
+            color: var(--document-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .documentos-section h3 i {
+            margin-right: 10px;
+        }
+        
+        .documentos-section p.subtitle {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .documentos-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 12px 25px;
+            background-color: var(--document-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .documentos-link:hover {
+            background-color: #d4851c;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+        }
+        
+        .course-card {
+            display: flex;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary-color);
+            transition: all 0.3s ease;
+            background-color: white;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .icon-container {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+        
+        .course-content {
+            padding: 20px;
+            flex-grow: 1;
+        }
+        
+        .course-title {
+            color: var(--primary-color);
+            margin: 0 0 10px;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        
+        .professor, .schedule {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .professor i, .schedule i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        .zoom-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .zoom-link:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .zoom-link i {
+            margin-right: 8px;
+        }
+        
+        .virtual-classroom {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: var(--light-color);
+            border-radius: 8px;
+        }
+        
+        .virtual-classroom a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .virtual-classroom a:hover {
+            background-color: #c0392b;
+        }
+        
+        .schedule-section {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: var(--light-color);
+            border-radius: 8px;
+        }
+        
+        .schedule-section h3 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .schedule-section h3 i {
+            margin-right: 10px;
+        }
+        
+        .schedule-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 15px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .course-card {
+                flex-direction: column;
+            }
+            
+            .icon-container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.2rem;
+            }
+            
+            .uni-main-logo {
+                width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://www.uni.edu.pe/images/logo_uni.png" alt="" class="uni-logo">
+            <h1>Doctorado en Ciencias e Ingeniería Estadística</h1>
+            <h2>Antonio Lam García</h2>
+        </header>
+        
+        <main>
+            <!-- Logo UNI principal -->
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyXMenkLZGsGeWDp-agKQACtNTPDIhOqLvefpd51lZ-ZH4wvilhNd1amtWj6z_sHGdbd33mQ42q7N7dPfWHHmURTuI9H_90E_06CdaTFlFKBgumTdfzTTnim0SzG-XlVH7a83zWg98DQW_jpTcxgianCjslPrdsMHqSHCNCPKhKEc0kD7HFnR1Qx7I50eK/s943/logo_y_uni.png" alt="Logo Universidad Nacional de Ingeniería" class="uni-main-logo">
+            
+            <!-- Sección de Documentos -->
+            <div class="documentos-section">
+                <h3><i class="fas fa-folder-open"></i> Recursos Académicos Ciclo II</h3>
+                <p class="subtitle">Documentos, Clases, Videos, Libros y Miscelánea</p>
+                <p>Accede a todos los recursos académicos del programa, incluyendo materiales de clase, grabaciones de sesiones, bibliografía recomendada y documentos complementarios.</p>
+                <a href="https://drive.google.com/drive/u/1/my-drive" class="documentos-link" target="_blank"><i class="fas fa-external-link-alt"></i> Acceder a Drive Académico - A.Lam.G </a>
+            </div>
+            
+            <!-- Curso 1 -->
+            <div class="course-card">
+                <div class="icon-container">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">Ecuaciones Diferenciales Estocásticos y Aplicaciones</h3>
+                    <p class="professor"><i class="fas fa-user-tie"></i> <strong>Dr. Elmer Rusbert</strong></p>
+                    <p class="schedule"><i class="fas fa-calendar-alt"></i> <strong>Horario : Sáb. 8 am.  /  Lunes 8:30 pm</strong> </p>
+                    <p>Curso avanzado de Ecuaciones Diferenciales Estocásticos y Aplicaciones.</p>
+                    <a href="https://us02web.zoom.us/j/86470396007?pwd=opZocLbcE9hOfQGbpDTLLdtfnBE0VO.1" class="zoom-link" target="_blank"><i class="fas fa-video"></i> Acceder a Zoom</a>
+                    <a href="https://classroom.google.com/c/NzY0NTg1OTYzNDQ2?cjc=dnxxfl6g" target="_blank" class="zoom-link"; margin-left: 10px;">
+                        <i class="fa-solid fa-newspaper"></i> classroom Ec.Dif.Estocásticos y Aplicaciones
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Curso 2 -->
+            <div class="course-card">
+                <div class="icon-container">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">Tópicos Avanzados de Machine Learning</h3>
+                    <p class="professor"><i class="fas fa-user-tie"></i> <strong>Dr. Helder Rojas</strong></p>
+                    <p class="schedule"><i class="fas fa-calendar-alt"></i> <strong>Horario:  Sáb. 10 am. a 1 pm. </strong> </p>
+                    <p>Profundización en los conceptos fundamentales del Aprendisaje Automatico.</p>
+                    <a href="https://us02web.zoom.us/j/83890241626?pwd=ydS6rUTH8UsQSyojn5anLGuucbz7Oi.1" class="zoom-link" target="_blank"><i class="fas fa-video"></i> Acceder a Zoom</a>
+ 
+                     <a href="https://github.com/jelincovil/un_curso_teoria_estadistica/tree/main/Documentos%20del%20curso" target="_blank" class="zoom-link"; margin-left: 10px;">
+                        <i class="fa-solid fa-file"></i> clasroom Tópicos Avanzados de Machine Learning<
+                    </a>
+ 
+ 
+                </div>
+            </div>
+            
+            <!-- Curso 3 -->
+            <div class="course-card">
+                <div class="icon-container">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">Formulación del Proyecto de Investigación II</h3>
+                    <p class="professor"><i class="fas fa-user-tie"></i> <strong>Dr. Luis Huamanchumo</strong></p>
+                    <p class="schedule"><i class="fas fa-calendar-alt"></i> <strong>Horario:  Sáb. 3 pm. a 6 pm. </strong></p>
+                    <p>Desarrollo de habilidades para la formulación y estructuración de proyectos de investigación en estadística.</p>
+                    <a href="https://us02web.zoom.us/j/86744742652?pwd=W0sNpFcOIniVlt3a1fcSrNwa7LqLIr.1" class="zoom-link" target="_blank"><i class="fas fa-video"></i> Acceder a Zoom</a>
+                    <a href="https://alamg001.github.io/HerramientasAcademicas/Index.html" target="_blank" class="zoom-link"; margin-left: 10px;">
+                        <i class="fa-solid fa-toolbox"></i> Herramientas Academicas de Investigación
+                    </a>
+                
+                </div>
+            </div>
+            
+            <!-- Curso 4 -->
+            <div class="course-card">
+                <div class="icon-container">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">Modelos Avanzados en Estadística Bayesiana</h3>
+                    <p class="professor"><i class="fas fa-user-tie"></i> <strong>Dr. Erick Chacón</strong></p>
+                    <p class="schedule"><i class="fas fa-calendar-alt"></i> <strong>Horario:  Dom. 3 pm. a 6 am. </strong></p>
+                    <p>Estadistica BAyesiana - Modelos Espaciales.</p>
+                    <a href="https://us02web.zoom.us/j/86236628226?pwd=tBLarV6lOHegvB2QhnDv8QFAPQW2Gk.1" class="zoom-link" target="_blank"><i class="fas fa-video"></i> Acceder a Zoom</a>
+                <a href="https://classroom.google.com/c/Nzc4MzM5MjQ5NzYx" target="_blank" class="zoom-link"; margin-left: 10px;">
+                        <i class="fa-solid fa-laptop-file"></i> classroom Model.Avanz.Estad.Bayesiana
+                    </a>
+
+                <a href="https://erickchacon.gitlab.io/course-bayesian-statistics/" target="_blank" class="zoom-link"; margin-left: 10px;">
+                        <i class="fa-solid fa-chart-simple"></i> Bayesian Statistics Course
+                    </a>
+
+
+                
+                </div>
+            </div>
+            
+            <!-- Aula Virtual -->
+            <div class="virtual-classroom">
+                <h3><i class="fas fa-laptop-house"></i> Aula Virtual</h3>
+                <p>Accede a todos los materiales de curso, tareas y recursos adicionales en nuestra plataforma de aprendizaje en línea.</p>
+                <a href="https://posgradouni.neolms.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Ingresar al Aula Virtual PosGrado UNI NEO_lms</a>
+            </div>
+            
+            <!-- Horario de Cursos -->
+            <div class="schedule-section">
+                <h3><i class="fas fa-calendar-week"></i> Horario Completo de Cursos - CICLO II</h3>
+                <p>Consulta el horario detallado de todas las asignaturas del programa de doctorado:</p>
+                
+                <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj5idzbF-ATUAu-0fxnoMEHeYmLasUIwWFuTf_jVd6m25zWkehbldWv7iMTVlgLmpBiBRzO6IpB0xy-GrRVp4nqBYME_OOwACKD3D3LE3AwjBSM911_KsQI05WVymiH2leTRUBLXLd8rMajB_bCzQDGH5Jg9f1NYDujMbsusaF-zCHn1wg3MhAdI2SoTEB_/s829/Horario%20Ciclo%20II.jpg" 
+                target="_blank">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj5idzbF-ATUAu-0fxnoMEHeYmLasUIwWFuTf_jVd6m25zWkehbldWv7iMTVlgLmpBiBRzO6IpB0xy-GrRVp4nqBYME_OOwACKD3D3LE3AwjBSM911_KsQI05WVymiH2leTRUBLXLd8rMajB_bCzQDGH5Jg9f1NYDujMbsusaF-zCHn1wg3MhAdI2SoTEB_/s829/Horario%20Ciclo%20II.jpg" 
+                        alt="Horario de Cursos del Doctorado en Estadística - Semestre 1" 
+                        class="schedule-image">
+                </a>
+                
+                <p style="margin-top: 15px; font-size: 0.9em; color: #666;">Haz clic en la imagen para verla en tamaño completo</p>
+            </div>
+
+
+
+    <div class="container">
+        <header>
+            <img src="https://www.uni.edu.pe/images/logo_uni.png" alt="" class="uni-logo">
+            <h1>Doctorado en Ciencias e Ingeniería Estadística</h1>
+            <h2>Presentaciones del Seminario Académico</h2>
+        </header>
+        
+        <main>
+            <!-- Logo UNI principal -->
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyXMenkLZGsGeWDp-agKQACtNTPDIhOqLvefpd51lZ-ZH4wvilhNd1amtWj6z_sHGdbd33mQ42q7N7dPfWHHmURTuI9H_90E_06CdaTFlFKBgumTdfzTTnim0SzG-XlVH7a83zWg98DQW_jpTcxgianCjslPrdsMHqSHCNCPKhKEc0kD7HFnR1Qx7I50eK/s943/logo_y_uni.png" alt="Logo Universidad Nacional de Ingeniería" class="uni-main-logo">
+            
+            <!-- Sección de Presentaciones -->
+            <div class="presentation-section">
+                <h3 class="presentation-title"><i class="fas fa-chalkboard-teacher"></i> Presentaciones del Seminario Académico</h3>
+                <p>Programa de presentaciones parciales para los cursos de:</p>
+                
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li><i class="fas fa-chart-line"></i> Teoría Estadística Avanzada</li>
+                    <li><i class="fas fa-calculator"></i> Probabilidad Avanzada</li>
+                    <li><i class="fas fa-robot"></i> Fundamentos de Machine Learning</li>
+                </ul>
+                
+                <h4 class="presentation-subtitle"><i class="fas fa-calendar-alt"></i> Fechas y horarios asignados - Exposición Parcial</h4>
+                
+                <div class="presentation-time">
+                    <i class="far fa-clock"></i> Lunes 23 de junio | 8:30 pm – 10:00 pm
+                </div>
+                <ul class="presentation-students">
+                    <li>Orbegoso Salas, Istavay Alberto</li>
+                    <li>Marcillo Hernández, Germán Arturo</li>
+                    <li>Yábar Geldres, Ingrid Alicia</li>
+                </ul>
+                
+                <div class="presentation-time">
+                    <i class="far fa-clock"></i> Sábado 28 de junio | 8:00 am – 9:30 am
+                </div>
+                <ul class="presentation-students">
+                    <li>Lam Garcia, Antonio Martin</li>
+                    <li>Almeyda Tejada, Leonardo</li>
+                    <li>Cordova Ayala, Diego Alonso</li>
+                </ul>
+                
+                <div class="presentation-time">
+                    <i class="far fa-clock"></i> Domingo 29 de junio | 8:00 am – 11:00 am
+                </div>
+                <ul class="presentation-students">
+                    <li>Tovar Ueda, Juan Carlos</li>
+                    <li>Garcia Santiago, Joseph</li>
+                    <li>Maldonado Avalos, Miriam Isabel</li>
+                    <li>Toyohama Poco, Gladys</li>
+                    <li>Jose Carhuaricra</li>
+                    <li>Fernández Palomino, Randy</li>
+                </ul>
+                
+                <div class="presentation-time">
+                    <i class="far fa-clock"></i> Lunes 30 de junio | 8:30 pm – 10:00 pm
+                </div>
+                <ul class="presentation-students">
+                    <li>Arenaza Encinas, Luis Gustavo</li>
+                    <li>Morales Sánchez, Angela Beatriz</li>
+                </ul>
+                
+                <p class="presentation-duration">
+                    <i class="fas fa-stopwatch"></i> Duración por presentación: Cada alumno dispondrá de 30 minutos.
+                </p>
+            </div>
+
+        </main>
+        
+        <footer>
+            <p>© 2025 Doctorado en Ciencias e Ingeniería Estadística - Universidad Nacional de Ingeniería</p>
+            <p>Todos los derechos reservados  -  Antonio Lam García</p>
+            n8-75-8
+        </footer>
+      <!--  </div>
+    
+        </body>
+
+        **********************************************************************************************
+
+        <body> 
+
+
+        <div class="container"> -->
+
+        <header>
+            <img src="https://www.uni.edu.pe/images/logo_uni.png" alt="" class="uni-logo">
+            <h1>Doctorado en Ciencias e Ingeniería Estadística</h1>
+            <h2>Antonio Lam García</h2>
+        </header>
+        
+        <main>
+            <!-- Logo UNI principal -->
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyXMenkLZGsGeWDp-agKQACtNTPDIhOqLvefpd51lZ-ZH4wvilhNd1amtWj6z_sHGdbd33mQ42q7N7dPfWHHmURTuI9H_90E_06CdaTFlFKBgumTdfzTTnim0SzG-XlVH7a83zWg98DQW_jpTcxgianCjslPrdsMHqSHCNCPKhKEc0kD7HFnR1Qx7I50eK/s943/logo_y_uni.png" alt="Logo Universidad Nacional de Ingeniería" class="uni-main-logo">
+            
+            <!-- Sección de Documentos -->
+            <div class="documentos-section">
+                <h3><i class="fas fa-folder-open"></i> Recursos Académicos</h3>
+                <p class="subtitle">Documentos, Clases, Videos, Libros y Miscelánea</p>
+                <p>Accede a todos los recursos académicos del programa, incluyendo materiales de clase, grabaciones de sesiones, bibliografía recomendada y documentos complementarios.</p>
+                <a href="https://drive.google.com/drive/u/1/my-drive" class="documentos-link" target="_blank"><i class="fas fa-external-link-alt"></i> Acceder a Drive Académico</a>
+            </div>
+            
+            <!-- Curso 1 -->
+            <div class="course-card">
+                <div class="icon-container">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">Probabilidad Avanzada</h3>
+                    <p class="professor"><i class="fas fa-user-tie"></i> <strong>Dr. Elmer Rusbert</strong></p>
+                    <p class="schedule"><i class="fas fa-calendar-alt"></i> <strong>Horario : Sáb. 8 am.  /  Lunes 8:30 pm</strong> </p>
+                    <p>Curso avanzado que cubre los fundamentos teóricos de la probabilidad moderna y sus aplicaciones en estadística.</p>
+                    <a href="https://us02web.zoom.us/j/86198957270?pwd=7oXL2yMIfRuLryOB5tjIb3Wb1hGdqI.1" class="zoom-link" target="_blank"><i class="fas fa-video"></i> Acceder a Zoom</a>
+                    <a href="https://classroom.google.com/c/NzY0NTg1OTYzNDQ2?cjc=dnxxfl6g" target="_blank" class="zoom-link"; margin-left: 10px;">
+                        <i class="fas fa-video"></i> classroom Probabilidad Avanzada
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Curso 2 -->
+            <div class="course-card">
+                <div class="icon-container">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">Teoría Estadística Avanzada</h3>
+                    <p class="professor"><i class="fas fa-user-tie"></i> <strong>Dr. Jaime Lincovil</strong></p>
+                    <p class="schedule"><i class="fas fa-calendar-alt"></i> <strong>Horario:  Sáb. 10 am. a 1 pm. </strong> </p>
+                    <p>Profundización en los conceptos fundamentales de la inferencia estadística, estimación y pruebas de hipótesis.</p>
+                    <a href="https://us02web.zoom.us/j/89696212712?pwd=EkayLQTYklQnJ1HMRR7m2kl1svkOnr.1" class="zoom-link" target="_blank"><i class="fas fa-video"></i> Acceder a Zoom</a>
+ 
+                     <a href="https://github.com/jelincovil/un_curso_teoria_estadistica/tree/main/Documentos%20del%20curso" target="_blank" class="zoom-link"; margin-left: 10px;">
+                        <i class="fas fa-video"></i> GibHub Probabilidad Avanzada
+                    </a>
+ 
+ 
+                </div>
+            </div>
+            
+            <!-- Curso 3 -->
+            <div class="course-card">
+                <div class="icon-container">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">Formulación del Proyecto de Investigación I</h3>
+                    <p class="professor"><i class="fas fa-user-tie"></i> <strong>Dr. Luis Huamanchumo</strong></p>
+                    <p class="schedule"><i class="fas fa-calendar-alt"></i> <strong>Horario:  Sáb. 3 pm. a 6 pm. </strong></p>
+                    <p>Desarrollo de habilidades para la formulación y estructuración de proyectos de investigación en estadística.</p>
+                    <a href="https://us02web.zoom.us/j/82233608152?pwd=pkKjA6fKhOS8FObeTema9VLIZpVKdh.1" class="zoom-link" target="_blank"><i class="fas fa-video"></i> Acceder a Zoom</a>
+                    <a href="https://alamg001.github.io/HerramientasAcademicas/Index.html" target="_blank" class="zoom-link"; margin-left: 10px;">
+                        <i class="fas fa-video"></i> Herramientas Academicas de Investigación
+                    </a>
+                
+                </div>
+            </div>
+            
+            <!-- Curso 4 -->
+            <div class="course-card">
+                <div class="icon-container">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">Fundamentos de Machine Learning</h3>
+                    <p class="professor"><i class="fas fa-user-tie"></i> <strong>Dr. Helder Rojas</strong></p>
+                    <p class="schedule"><i class="fas fa-calendar-alt"></i> <strong>Horario:  Dom. 8 am. a 11 am. </strong></p>
+                    <p>Introducción a los algoritmos fundamentales de aprendizaje automático y sus aplicaciones estadísticas.</p>
+                    <a href="https://us02web.zoom.us/j/82227283708?pwd=oajtGqGYcjabdccbIHzSly8VGGkIjB.1" class="zoom-link" target="_blank"><i class="fas fa-video"></i> Acceder a Zoom</a>
+                <a href="https://classroom.google.com/c/Nzc4MzM5MjQ5NzYx" target="_blank" class="zoom-link"; margin-left: 10px;">
+                        <i class="fas fa-video"></i> classroom Machine Learning
+                    </a>
+                
+                </div>
+            </div>
+            
+            <!-- Aula Virtual -->
+            <div class="virtual-classroom">
+                <h3><i class="fas fa-laptop-house"></i> Aula Virtual</h3>
+                <p>Accede a todos los materiales de curso, tareas y recursos adicionales en nuestra plataforma de aprendizaje en línea.</p>
+                <a href="https://posgradouni.neolms.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Ingresar al Aula Virtual</a>
+            </div>
+            
+            <!-- Horario de Cursos -->
+            <div class="schedule-section">
+                <h3><i class="fas fa-calendar-week"></i> Horario Completo de Cursos - Semestre 1</h3>
+                <p>Consulta el horario detallado de todas las asignaturas del programa de doctorado:</p>
+                
+                <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMN0vce5l5h7ji9iypUlXgwjBNrPzqvt4L9M0JHD8CiZV8G1i63l4DdKMdo7m8LaMohyphenhyphenwGl2vvoLp3xtOjZIKaPzFQEUmaMK6UDGWyo8GC75pokd-vN9ompCEwKQLqknvy1hac3QlWcYUVqTZTQYuw4lGnRQvkRYeTuL1Bl5s0fwehRbVWIwrDn8c5ycwy/s853/Horario_Doctorado_S1.jpeg" 
+                target="_blank">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMN0vce5l5h7ji9iypUlXgwjBNrPzqvt4L9M0JHD8CiZV8G1i63l4DdKMdo7m8LaMohyphenhyphenwGl2vvoLp3xtOjZIKaPzFQEUmaMK6UDGWyo8GC75pokd-vN9ompCEwKQLqknvy1hac3QlWcYUVqTZTQYuw4lGnRQvkRYeTuL1Bl5s0fwehRbVWIwrDn8c5ycwy/s853/Horario_Doctorado_S1.jpeg" 
+                        alt="Horario de Cursos del Doctorado en Estadística - Semestre 1" 
+                        class="schedule-image">
+                </a>
+                
+                <p style="margin-top: 15px; font-size: 0.9em; color: #666;">Haz clic en la imagen para verla en tamaño completo</p>
+            </div>
+
+
+
+    <div class="container">
+        <header>
+            <img src="https://www.uni.edu.pe/images/logo_uni.png" alt="" class="uni-logo">
+            <h1>Doctorado en Ciencias e Ingeniería Estadística</h1>
+            <h2>Presentaciones del Seminario Académico</h2>
+        </header>
+        
+        <main>
+            <!-- Logo UNI principal -->
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyXMenkLZGsGeWDp-agKQACtNTPDIhOqLvefpd51lZ-ZH4wvilhNd1amtWj6z_sHGdbd33mQ42q7N7dPfWHHmURTuI9H_90E_06CdaTFlFKBgumTdfzTTnim0SzG-XlVH7a83zWg98DQW_jpTcxgianCjslPrdsMHqSHCNCPKhKEc0kD7HFnR1Qx7I50eK/s943/logo_y_uni.png" alt="Logo Universidad Nacional de Ingeniería" class="uni-main-logo">
+            
+            <!-- Sección de Presentaciones -->
+            <div class="presentation-section">
+                <h3 class="presentation-title"><i class="fas fa-chalkboard-teacher"></i> Presentaciones del Seminario Académico</h3>
+                <p>Programa de presentaciones parciales para los cursos de:</p>
+                
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li><i class="fas fa-chart-line"></i> Teoría Estadística Avanzada</li>
+                    <li><i class="fas fa-calculator"></i> Probabilidad Avanzada</li>
+                    <li><i class="fas fa-robot"></i> Fundamentos de Machine Learning</li>
+                </ul>
+                
+                <h4 class="presentation-subtitle"><i class="fas fa-calendar-alt"></i> Fechas y horarios asignados - Exposición Parcial</h4>
+                
+                <div class="presentation-time">
+                    <i class="far fa-clock"></i> Lunes 23 de junio | 8:30 pm – 10:00 pm
+                </div>
+                <ul class="presentation-students">
+                    <li>Orbegoso Salas, Istavay Alberto</li>
+                    <li>Marcillo Hernández, Germán Arturo</li>
+                    <li>Yábar Geldres, Ingrid Alicia</li>
+                </ul>
+                
+                <div class="presentation-time">
+                    <i class="far fa-clock"></i> Sábado 28 de junio | 8:00 am – 9:30 am
+                </div>
+                <ul class="presentation-students">
+                    <li>Lam Garcia, Antonio Martin</li>
+                    <li>Almeyda Tejada, Leonardo</li>
+                    <li>Cordova Ayala, Diego Alonso</li>
+                </ul>
+                
+                <div class="presentation-time">
+                    <i class="far fa-clock"></i> Domingo 29 de junio | 8:00 am – 11:00 am
+                </div>
+                <ul class="presentation-students">
+                    <li>Tovar Ueda, Juan Carlos</li>
+                    <li>Garcia Santiago, Joseph</li>
+                    <li>Maldonado Avalos, Miriam Isabel</li>
+                    <li>Toyohama Poco, Gladys</li>
+                    <li>Jose Carhuaricra</li>
+                    <li>Fernández Palomino, Randy</li>
+                </ul>
+                
+                <div class="presentation-time">
+                    <i class="far fa-clock"></i> Lunes 30 de junio | 8:30 pm – 10:00 pm
+                </div>
+                <ul class="presentation-students">
+                    <li>Arenaza Encinas, Luis Gustavo</li>
+                    <li>Morales Sánchez, Angela Beatriz</li>
+                </ul>
+                
+                <p class="presentation-duration">
+                    <i class="fas fa-stopwatch"></i> Duración por presentación: Cada alumno dispondrá de 30 minutos.
+                </p>
+            </div>
+
+
+
+
+            
+
+
+
+
+
+        </main>
+        
+        <footer>
+            <p>© 2025 Doctorado en Ciencias e Ingeniería Estadística - Universidad Nacional de Ingeniería</p>
+            <p>Todos los derechos reservados  -  Antonio Lam García</p>
+            n8-75-8
+        </footer>
+    </div>
+</body>
+</html>
